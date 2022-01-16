@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 
 import App from './components/App';
 import ReduxProvider from './redux/ReduxProvider';
+import ThemeProvider from './styles/ThemeProvider';
 
 ReactDOM.render(
     <ReduxProvider>
-        <App />
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
     </ReduxProvider>,
     document.querySelector('#root')
 );
