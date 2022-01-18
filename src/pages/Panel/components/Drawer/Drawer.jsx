@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
+import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
@@ -53,18 +55,15 @@ const DrawerComponent = (props) => {
     </div>
   );
 
-   const container = window !== undefined ? () => window().document.body : undefined;
-
     return (
         <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
       <AppBar
         position="fixed"
         sx={{
-          //width: { sm: `calc(100% - ${drawerWidth}px)` },
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          color: 'secondary.main'
         }}
-        style={{backgroundColor: '#222222'}}
       >
         <Toolbar>
           <IconButton
@@ -88,7 +87,6 @@ const DrawerComponent = (props) => {
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
-          container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
@@ -115,8 +113,9 @@ const DrawerComponent = (props) => {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1 }}
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
+        <Toolbar />
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
