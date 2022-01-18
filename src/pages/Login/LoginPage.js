@@ -18,9 +18,7 @@ const Login = () => {
     const auth = useSelector(state => state.auth);
 
     return (
-        <Box>
-            <Container>
-                <Grid container>
+        <Grid container>
                 <Button variant='contained' color='secondary'>ggg</Button>
                 <h3 onClick={() => dispatch(login())}>Click me to login</h3>
                 <h1>{JSON.stringify(auth)}</h1>
@@ -47,12 +45,9 @@ const Login = () => {
                     <Button size="small">Learn More</Button>
                 </CardActions>
                 </Card>
-                
-                </Grid>
-            </Container>
+        </Grid>
+           
             
-            
-        </Box>
     )
 }
 

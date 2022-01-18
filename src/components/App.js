@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RouterProvider, Routes } from './navigation';
 import { checkAuth } from '../redux/slices/authSlice';
 
+import { PanelWrapper } from './layout';
+
 const App = () => {
     const dispatch = useDispatch();
     const isAuthLoading = useSelector(state => state.auth.isAuthLoading)
@@ -14,9 +16,9 @@ const App = () => {
     
     return (
         <RouterProvider>
-            <div><h1>Header</h1></div>
-            <Routes />
-            <div><h1>Footer</h1></div>
+            <PanelWrapper>
+                <Routes />
+            </PanelWrapper>
         </RouterProvider>
     )
 }
