@@ -1,6 +1,7 @@
 import { 
     LoginPage,
-    PanelPage
+    PanelPage,
+    TradingPage
 } from '../pages';
 
 const AppRoutes = {
@@ -18,11 +19,18 @@ const AppRoutes = {
         component: PanelPage,
         private: true
     },
+    Trading: {
+        name: 'Trading',
+        path: '/trading-panel',
+        exact: true,
+        component: TradingPage,
+        private: false
+    },
     Default: {
         name: 'Default',
         path: '/',
         exact: false,
-        component: LoginPage,
+        component: TradingPage,
         private: false
     }
 }

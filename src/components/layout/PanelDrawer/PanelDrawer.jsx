@@ -1,4 +1,9 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { toggleMobileDrawer } from '../../../redux/slices/drawerSlice';
+import drawerController from '../../../controllers/drawerController';
+
 import Toolbar from '@mui/material/Toolbar';
 import { ListItem, List, ListItemIcon, ListItemText } from '@mui/material';
 import Box from '@mui/material/Box';
@@ -8,9 +13,10 @@ import Drawer from '@mui/material/Drawer';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
-const drawerWidth = 240;
+const PanelDrawer = (props) => {
+    const isMobileDrawerOpen = useSelector(state => state.drawer.isMobileDrawerOpen);
+    const dispatch = useDispatch();
 
-const PanelDrawer = () => {
     const drawer = (
         <div>
           <Toolbar />
@@ -42,34 +48,33 @@ const PanelDrawer = () => {
     return (
     <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { sm: drawerController.DRAWER_WIDTH }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
     >
-    {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-    {/*<Drawer
-        variant="temporary"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        ModalProps={{
-        keepMounted: true, // Better open performance on mobile.
-        }}
-        sx={{
-        display: { xs: 'block', sm: 'none' },
-        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-        }}
-    >
+      <Drawer
+          variant="temporary"
+          open={isMobileDrawerOpen}
+          onClose={() => dispatch(toggleMobileDrawer())}
+          ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+          display: { xs: 'block', sm: 'none' },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerController.DRAWER_WIDTH },
+          }}
+      >
         {drawer}
-    </Drawer>*/}
-    <Drawer
+      </Drawer>
+      <Drawer
         variant="permanent"
         sx={{
         display: { xs: 'none', sm: 'block' },
-        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerController.DRAWER_WIDTH },
         }}
         open
-    >
+      >
         {drawer}
-    </Drawer>
+      </Drawer>
     </Box>
     )
 }
