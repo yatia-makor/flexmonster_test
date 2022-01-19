@@ -5,37 +5,39 @@ const getDesignTheme = (mode) =>  createTheme({
     typography: {
         fontFamily: ['Poppins', 'sans-serif'].join(),
     },
-    overrides: {
+    components: {
       MuiCssBaseline: {
-        '@global': {
-          body: {
-            margin: "0",
-            width: "100vw",
-            height: "100vh"
-          },
-          /* width */
-          "::-webkit-scrollbar ": {
-            width: "10px",
-            height: "10px"
-          },
-          /* Track */
-          "::-webkit-scrollbar-track": {
-            background: "#888",
-          },
-          /* Handle */
-          "::-webkit-scrollbar-thumb": {
-            background: "#555",
-            "border-radius": "10px",
-            outline: '1px solid slategrey'
-          },
-          /* Handle on hover */
-          "::-webkit-scrollbar-thumb:hover": {
-            background: "#424242",
-          },
-          "a:-webkit-any-link": {
-            "text-decoration": "none"
-          }
+        styleOverrides: {
+            body: {
+              margin: "0",
+              width: "100vw",
+              height: "100vh"
+            },
+            /* width */
+            "::-webkit-scrollbar ": {
+              width: "10px",
+              height: "10px"
+            },
+            /* Track */
+            "::-webkit-scrollbar-track": {
+              background: "#888",
+            },
+            /* Handle */
+            "::-webkit-scrollbar-thumb": {
+              background: "#555",
+              "border-radius": "10px",
+              outline: '1px solid slategrey'
+            },
+            /* Handle on hover */
+            "::-webkit-scrollbar-thumb:hover": {
+              background: "#424242",
+            },
+            "a:-webkit-any-link": {
+              "text-decoration": "none"
+            }
+          
         }
+        
       }
     },
     zIndex: {
