@@ -2,6 +2,14 @@ import { createTheme } from '@mui/material/styles';
 
 const getDesignTheme = (mode) =>  createTheme({
     palette: mode === 'dark' ? darkThemePalette : lightTherePalette,
+    mixins: {
+      toolbar: {
+        minHeight: 56,
+        '@media (min-width:600px)': {
+          minHeight: 64
+        }
+      }
+    },
     typography: {
         fontFamily: ['Poppins', 'sans-serif'].join(),
     },
@@ -10,7 +18,6 @@ const getDesignTheme = (mode) =>  createTheme({
         styleOverrides: {
             body: {
               margin: "0",
-              width: "100vw",
               height: "100vh"
             },
             /* width */
