@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useContext } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 
@@ -7,7 +7,8 @@ import getTheme from './theme/theme';
 
 
 const ThemeProvider = ({ children }) => {
-    const [mode, setMode] = useState('light')
+    const defaultThemeName = useContext(ThemeModeContext)
+    const [mode, setMode] = useState(defaultThemeName)
 
     const themeMode = useMemo(() => ({
         toggleThemeMode: () => {

@@ -32,7 +32,7 @@ const getDesignTheme = (mode) =>  createTheme({
             /* Handle */
             "::-webkit-scrollbar-thumb": {
               background: "#555",
-              "border-radius": "10px",
+              borderRadius: "10px",
               outline: '1px solid slategrey'
             },
             /* Handle on hover */
@@ -40,7 +40,7 @@ const getDesignTheme = (mode) =>  createTheme({
               background: "#424242",
             },
             "a:-webkit-any-link": {
-              "text-decoration": "none"
+              textDecoration: "none"
             }
           
         }
