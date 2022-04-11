@@ -1,0 +1,77 @@
+{
+    "slice": {
+        "rows": [
+            {
+                "uniqueName": "quote_currency_id"
+            },
+            {
+                "uniqueName": "config"
+            },
+            {
+                "uniqueName": "created_at"
+            },
+            {
+                "uniqueName": "name"
+            },
+            {
+                "uniqueName": "status"
+            },
+            {
+                "uniqueName": "updated_at"
+            },
+            {
+                "uniqueName": "uuid"
+            }
+        ],
+        "columns": [
+            {
+                "uniqueName": "[Measures]"
+            }
+        ],
+        "measures": [
+            {
+                "uniqueName": "quote_currency_id",
+                "aggregation": "count"
+            },
+            {
+                "uniqueName": "base_currency_id",
+                "aggregation": "sum"
+            },
+            {
+                "uniqueName": "enigma2_id",
+                "aggregation": "sum"
+            },
+            {
+                "uniqueName": "id",
+                "aggregation": "sum"
+            },
+            {
+                "uniqueName": "is_active",
+                "aggregation": "sum"
+            }
+        ],
+        "flatOrder": [
+            "id",
+            "quote_currency_id",
+            "base_currency_id",
+            "config",
+            "created_at",
+            "enigma2_id",
+            "is_active",
+            "name",
+            "status",
+            "updated_at",
+            "updated_by",
+            "uuid"
+        ]
+    },
+    "options": {
+        "grid": {
+            "type": "flat",
+            "showGrandTotals": "off"
+        },
+        "readOnly": true
+    },
+    "version": "2.9.22",
+    "creationDate": "2022-04-10T12:45:53.560Z"
+}

@@ -31,10 +31,10 @@ const PanelBar = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Enigma Labs
+            Flexmonster
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          <Button color="inherit" onClick={toggleThemeMode}>Theme</Button>
+          <Button color="inherit" onClick={toggleThemeMode}>Change Theme</Button>
         </Toolbar>
       </AppBar>
     );

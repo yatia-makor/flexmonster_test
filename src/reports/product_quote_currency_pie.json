@@ -1,0 +1,36 @@
+{
+    "slice": {
+        "rows": [
+            {
+                "uniqueName": "quote_currency_id"
+            }
+        ],
+        "columns": [
+            {
+                "uniqueName": "[Measures]"
+            }
+        ],
+        "measures": [
+            {
+                "uniqueName": "quote_currency_id",
+                "aggregation": "count"
+            }
+        ],
+        "flatOrder": [
+            "quote_currency_id"
+        ]
+    },
+    "options": {
+        "viewType": "charts",
+        "grid": {
+            "type": "flat",
+            "showGrandTotals": "off"
+        },
+        "chart": {
+            "type": "pie"
+        },
+        "readOnly": true
+    },
+    "version": "2.9.22",
+    "creationDate": "2022-04-10T13:11:34.068Z"
+}
